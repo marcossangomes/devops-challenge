@@ -1,0 +1,401 @@
+2020-04-03T02:22:15.4990910Z ##[section]Starting: Deploy_Terraform
+2020-04-03T02:22:15.6884439Z ##[section]Starting: Initialize job
+2020-04-03T02:22:15.6885172Z Agent name: 'Hosted Agent'
+2020-04-03T02:22:15.6885608Z Agent machine name: 'fv-az221'
+2020-04-03T02:22:15.6885916Z Current agent version: '2.165.2'
+2020-04-03T02:22:15.6887050Z Current image version: '20200330.1'
+2020-04-03T02:22:15.6891861Z Agent running as: 'vsts'
+2020-04-03T02:22:15.6943065Z Prepare build directory.
+2020-04-03T02:22:15.7279017Z Set build variables.
+2020-04-03T02:22:15.7314503Z Download all required tasks.
+2020-04-03T02:22:15.7441126Z Downloading task: DownloadPipelineArtifact (1.2.4)
+2020-04-03T02:22:16.6763995Z Downloading task: TerraformCLI (0.5.2)
+2020-04-03T02:22:17.6762942Z Checking job knob settings.
+2020-04-03T02:22:17.6783845Z Finished checking job knob settings.
+2020-04-03T02:22:17.7074865Z Start tracking orphan processes.
+2020-04-03T02:22:17.7327114Z ##[section]Finishing: Initialize job
+2020-04-03T02:22:17.7685930Z ##[section]Starting: Download Artifact
+2020-04-03T02:22:17.7913135Z ==============================================================================
+2020-04-03T02:22:17.7913850Z Task         : Download pipeline artifact
+2020-04-03T02:22:17.7914426Z Description  : Download a named artifact from a pipeline to a local path
+2020-04-03T02:22:17.7914765Z Version      : 1.2.4
+2020-04-03T02:22:17.7915226Z Author       : Microsoft Corporation
+2020-04-03T02:22:17.7915883Z Help         : Download a named artifact from a pipeline to a local path
+2020-04-03T02:22:17.7916311Z ==============================================================================
+2020-04-03T02:22:18.2091662Z Download from the specified build: #18027
+2020-04-03T02:22:18.2092578Z Download artifact to: /home/vsts/work/1/
+2020-04-03T02:22:19.2954783Z Information, ApplicationInsightsTelemetrySender will correlate events with X-TFS-Session 552563fb-994c-40b7-ac78-b71bbaa5f067
+2020-04-03T02:22:19.3445145Z Downloading 1 pipeline artifacts...
+2020-04-03T02:22:20.1742944Z Information, DedupManifestArtifactClient will correlate http requests with X-TFS-Session 552563fb-994c-40b7-ac78-b71bbaa5f067
+2020-04-03T02:22:20.1744349Z Information, Start downloading artifact - terraform_out
+2020-04-03T02:22:20.1744934Z Information, Minimatch patterns: [**]
+2020-04-03T02:22:20.1746580Z Information, ArtifactHttpRetryMessageHandler.SendAsync: https://vsblobprodsbr1.vsblob.visualstudio.com/A0d34a528-b5da-4acd-a436-92d2bfcbebad/_apis/dedup/chunks/42CF3851887C212D8A4EF45F9F4428E67B989AED650A3EED6133940E796F305E01 attempt 1/6 failed with StatusCode RedirectMethod, IsRetryableResponse False
+2020-04-03T02:22:20.1747673Z Information, Filtered 12 files from the Minimatch filters supplied.
+2020-04-03T02:22:20.1748146Z Information, Downloaded 0.0 MB out of 0.0 MB (0%).
+2020-04-03T02:22:20.2906994Z Information, Downloaded 0.0 MB out of 0.0 MB (100%).
+2020-04-03T02:22:20.2918713Z Information, 
+2020-04-03T02:22:20.2919135Z Download statistics:
+2020-04-03T02:22:20.2919536Z Total Content: 0.0 MB
+2020-04-03T02:22:20.2919938Z Physical Content Downloaded: 0.0 MB
+2020-04-03T02:22:20.2920340Z Compression Saved: 0.0 MB
+2020-04-03T02:22:20.2920720Z Local Caching Saved: 0.0 MB
+2020-04-03T02:22:20.2921074Z Chunks Downloaded: 12
+2020-04-03T02:22:20.2921426Z Nodes Downloaded: 0
+2020-04-03T02:22:20.2921699Z 
+2020-04-03T02:22:20.2966405Z Information, Download completed.
+2020-04-03T02:22:21.4531145Z Information, ApplicationInsightsTelemetrySender correlated 2 events with X-TFS-Session 552563fb-994c-40b7-ac78-b71bbaa5f067
+2020-04-03T02:22:21.4552768Z Downloading artifact finished.
+2020-04-03T02:22:21.4648552Z ##[section]Finishing: Download Artifact
+2020-04-03T02:22:21.4679036Z ##[section]Starting: terraform init
+2020-04-03T02:22:21.4689890Z ==============================================================================
+2020-04-03T02:22:21.4690275Z Task         : Terraform CLI
+2020-04-03T02:22:21.4690580Z Description  : Execute terraform cli commands
+2020-04-03T02:22:21.4690864Z Version      : 0.5.2
+2020-04-03T02:22:21.4691121Z Author       : Charles Zipp
+2020-04-03T02:22:21.4691561Z Help         : 
+2020-04-03T02:22:21.4691870Z ==============================================================================
+2020-04-03T02:22:22.2479398Z [command]/usr/local/bin/terraform version
+2020-04-03T02:22:24.6795715Z Terraform v0.12.24
+2020-04-03T02:22:25.3047086Z 
+2020-04-03T02:22:25.3271847Z [command]/usr/local/bin/terraform init -backend-config=storage_account_name=saaksterraform -backend-config=container_name=tfstate -backend-config=key=demo.terraform.tfstate -backend-config=resource_group_name=AKSTerraform-RG -backend-config=arm_subscription_id=d2b8c7ca-fc1a-4c03-aeea-9740237b2bb4 -backend-config=arm_tenant_id=*** -backend-config=arm_client_id=*** -backend-config=arm_client_secret=***
+2020-04-03T02:22:25.4324163Z 
+2020-04-03T02:22:25.4325721Z [0m[1mInitializing the backend...[0m
+2020-04-03T02:22:25.4728134Z [0m[32m
+2020-04-03T02:22:25.4728982Z Successfully configured the backend "azurerm"! Terraform will automatically
+2020-04-03T02:22:25.4729881Z use this backend unless the backend configuration changes.[0m
+2020-04-03T02:22:28.2978062Z 
+2020-04-03T02:22:28.2986109Z [0m[1mInitializing provider plugins...[0m
+2020-04-03T02:22:28.2991577Z - Checking for available provider plugins...
+2020-04-03T02:22:28.4957299Z - Downloading plugin for provider "azurerm" (hashicorp/azurerm) 1.44.0...
+2020-04-03T02:22:30.3998577Z 
+2020-04-03T02:22:30.4005201Z [0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+2020-04-03T02:22:30.4006327Z [0m[32m
+2020-04-03T02:22:30.4007041Z You may now begin working with Terraform. Try running "terraform plan" to see
+2020-04-03T02:22:30.4007907Z any changes that are required for your infrastructure. All Terraform commands
+2020-04-03T02:22:30.4008477Z should now work.
+2020-04-03T02:22:30.4008883Z 
+2020-04-03T02:22:30.4009436Z If you ever set or change modules or backend configuration for Terraform,
+2020-04-03T02:22:30.4010100Z rerun this command to reinitialize your working directory. If you forget, other
+2020-04-03T02:22:30.4011045Z commands will detect it and remind you to do so if necessary.[0m
+2020-04-03T02:22:30.4110416Z 
+2020-04-03T02:22:30.9436380Z ##[section]Finishing: terraform init
+2020-04-03T02:22:30.9463561Z ##[section]Starting: terraform plan
+2020-04-03T02:22:30.9473945Z ==============================================================================
+2020-04-03T02:22:30.9474323Z Task         : Terraform CLI
+2020-04-03T02:22:30.9474657Z Description  : Execute terraform cli commands
+2020-04-03T02:22:30.9474938Z Version      : 0.5.2
+2020-04-03T02:22:30.9475213Z Author       : Charles Zipp
+2020-04-03T02:22:30.9475484Z Help         : 
+2020-04-03T02:22:30.9475813Z ==============================================================================
+2020-04-03T02:22:31.3431010Z [command]/usr/local/bin/terraform version
+2020-04-03T02:22:31.5678626Z Terraform v0.12.24
+2020-04-03T02:22:32.0353130Z + provider.azurerm v1.44.0
+2020-04-03T02:22:32.0391529Z 
+2020-04-03T02:22:32.5367591Z [command]/usr/local/bin/terraform plan -var-file=/home/vsts/work/_temp/aks_conf.tfvars -out /home/vsts/work/1/terraform_out/terraform_aks_out
+2020-04-03T02:22:34.1433301Z Acquiring state lock. This may take a few moments...
+2020-04-03T02:22:36.4569591Z [0m[1mRefreshing Terraform state in-memory prior to plan...[0m
+2020-04-03T02:22:36.4570563Z The refreshed state will be used to calculate this plan, but will not be
+2020-04-03T02:22:36.4571305Z persisted to local or remote state storage.
+2020-04-03T02:22:36.4572088Z [0m
+2020-04-03T02:22:41.6898354Z [0m[1mdata.azurerm_key_vault.terraform_vault: Refreshing state...[0m
+2020-04-03T02:22:42.4960379Z [0m[1mdata.azurerm_key_vault_secret.spn_id: Refreshing state...[0m
+2020-04-03T02:22:42.4961146Z [0m[1mdata.azurerm_key_vault_secret.spn_secret: Refreshing state...[0m
+2020-04-03T02:22:42.4961795Z [0m[1mdata.azurerm_key_vault_secret.ssh_public_key: Refreshing state...[0m
+2020-04-03T02:22:45.0055892Z 
+2020-04-03T02:22:45.0057813Z ------------------------------------------------------------------------
+2020-04-03T02:22:50.2153606Z 
+2020-04-03T02:22:50.2154780Z An execution plan has been generated and is shown below.
+2020-04-03T02:22:50.2155433Z Resource actions are indicated with the following symbols:
+2020-04-03T02:22:50.2156527Z   [32m+[0m create
+2020-04-03T02:22:50.2165068Z [0m
+2020-04-03T02:22:50.2167172Z Terraform will perform the following actions:
+2020-04-03T02:22:50.2167600Z 
+2020-04-03T02:22:50.2168394Z [1m  # azurerm_container_registry.acr[0m will be created[0m[0m
+2020-04-03T02:22:50.2169192Z [0m  [32m+[0m[0m resource "azurerm_container_registry" "acr" {
+2020-04-03T02:22:50.2169950Z       [32m+[0m [0m[1m[0madmin_enabled[0m[0m       = false
+2020-04-03T02:22:50.2170746Z       [32m+[0m [0m[1m[0madmin_password[0m[0m      = (sensitive value)
+2020-04-03T02:22:50.2171556Z       [32m+[0m [0m[1m[0madmin_username[0m[0m      = (known after apply)
+2020-04-03T02:22:50.2172387Z       [32m+[0m [0m[1m[0mid[0m[0m                  = (known after apply)
+2020-04-03T02:22:50.2173178Z       [32m+[0m [0m[1m[0mlocation[0m[0m            = "eastus"
+2020-04-03T02:22:50.2173994Z       [32m+[0m [0m[1m[0mlogin_server[0m[0m        = (known after apply)
+2020-04-03T02:22:50.2174815Z       [32m+[0m [0m[1m[0mname[0m[0m                = "acraksterraform"
+2020-04-03T02:22:50.2237063Z       [32m+[0m [0m[1m[0mnetwork_rule_set[0m[0m    = (known after apply)
+2020-04-03T02:22:50.2261435Z       [32m+[0m [0m[1m[0mresource_group_name[0m[0m = "AKSCluster-RG"
+2020-04-03T02:22:50.2262409Z       [32m+[0m [0m[1m[0msku[0m[0m                 = "Basic"
+2020-04-03T02:22:50.2264257Z       [32m+[0m [0m[1m[0mtags[0m[0m                = (known after apply)
+2020-04-03T02:22:50.2265310Z     }
+2020-04-03T02:22:50.2266468Z 
+2020-04-03T02:22:50.2267343Z [1m  # azurerm_kubernetes_cluster.aks_k2[0m will be created[0m[0m
+2020-04-03T02:22:50.2269046Z [0m  [32m+[0m[0m resource "azurerm_kubernetes_cluster" "aks_k2" {
+2020-04-03T02:22:50.2270007Z       [32m+[0m [0m[1m[0mdns_prefix[0m[0m                 = "AKSTerraform"
+2020-04-03T02:22:50.2270889Z       [32m+[0m [0m[1m[0menable_pod_security_policy[0m[0m = (known after apply)
+2020-04-03T02:22:50.2271964Z       [32m+[0m [0m[1m[0mfqdn[0m[0m                       = (known after apply)
+2020-04-03T02:22:50.2272882Z       [32m+[0m [0m[1m[0mid[0m[0m                         = (known after apply)
+2020-04-03T02:22:50.2275037Z       [32m+[0m [0m[1m[0mkube_admin_config[0m[0m          = (known after apply)
+2020-04-03T02:22:50.2281115Z       [32m+[0m [0m[1m[0mkube_admin_config_raw[0m[0m      = (sensitive value)
+2020-04-03T02:22:50.2282075Z       [32m+[0m [0m[1m[0mkube_config[0m[0m                = (known after apply)
+2020-04-03T02:22:50.2282887Z       [32m+[0m [0m[1m[0mkube_config_raw[0m[0m            = (sensitive value)
+2020-04-03T02:22:50.2283631Z       [32m+[0m [0m[1m[0mkubernetes_version[0m[0m         = "1.17.3"
+2020-04-03T02:22:50.2285206Z       [32m+[0m [0m[1m[0mlocation[0m[0m                   = "eastus"
+2020-04-03T02:22:50.2285964Z       [32m+[0m [0m[1m[0mname[0m[0m                       = "AKSTerraform"
+2020-04-03T02:22:50.2286756Z       [32m+[0m [0m[1m[0mnode_resource_group[0m[0m        = (known after apply)
+2020-04-03T02:22:50.2287544Z       [32m+[0m [0m[1m[0mprivate_fqdn[0m[0m               = (known after apply)
+2020-04-03T02:22:50.2288300Z       [32m+[0m [0m[1m[0mresource_group_name[0m[0m        = "AKSCluster-RG"
+2020-04-03T02:22:50.2289027Z       [32m+[0m [0m[1m[0mtags[0m[0m                       = {
+2020-04-03T02:22:50.2289660Z           [32m+[0m [0m"Environment" = "Demo"
+2020-04-03T02:22:50.2290029Z         }
+2020-04-03T02:22:50.2290255Z 
+2020-04-03T02:22:50.2290729Z       [32m+[0m [0maddon_profile {
+2020-04-03T02:22:50.2291326Z           [32m+[0m [0maci_connector_linux {
+2020-04-03T02:22:50.2292002Z               [32m+[0m [0m[1m[0menabled[0m[0m     = (known after apply)
+2020-04-03T02:22:50.2292749Z               [32m+[0m [0m[1m[0msubnet_name[0m[0m = (known after apply)
+2020-04-03T02:22:50.2293364Z             }
+2020-04-03T02:22:50.2293614Z 
+2020-04-03T02:22:50.2294111Z           [32m+[0m [0mazure_policy {
+2020-04-03T02:22:50.2294786Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2020-04-03T02:22:50.2295188Z             }
+2020-04-03T02:22:50.2295436Z 
+2020-04-03T02:22:50.2295943Z           [32m+[0m [0mhttp_application_routing {
+2020-04-03T02:22:50.2296709Z               [32m+[0m [0m[1m[0menabled[0m[0m                            = (known after apply)
+2020-04-03T02:22:50.2297543Z               [32m+[0m [0m[1m[0mhttp_application_routing_zone_name[0m[0m = (known after apply)
+2020-04-03T02:22:50.2298014Z             }
+2020-04-03T02:22:50.2298241Z 
+2020-04-03T02:22:50.2298738Z           [32m+[0m [0mkube_dashboard {
+2020-04-03T02:22:50.2299398Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2020-04-03T02:22:50.2303460Z             }
+2020-04-03T02:22:50.2303806Z 
+2020-04-03T02:22:50.2304424Z           [32m+[0m [0moms_agent {
+2020-04-03T02:22:50.2305162Z               [32m+[0m [0m[1m[0menabled[0m[0m                    = (known after apply)
+2020-04-03T02:22:50.2305969Z               [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m = (known after apply)
+2020-04-03T02:22:50.2306430Z             }
+2020-04-03T02:22:50.2306704Z         }
+2020-04-03T02:22:50.2306943Z 
+2020-04-03T02:22:50.2307427Z       [32m+[0m [0magent_pool_profile {
+2020-04-03T02:22:50.2308103Z           [32m+[0m [0m[1m[0mcount[0m[0m           = 3
+2020-04-03T02:22:50.2309389Z           [32m+[0m [0m[1m[0mdns_prefix[0m[0m      = (known after apply)
+2020-04-03T02:22:50.2310125Z           [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+2020-04-03T02:22:50.2310838Z           [32m+[0m [0m[1m[0mmax_pods[0m[0m        = 100
+2020-04-03T02:22:50.2311836Z           [32m+[0m [0m[1m[0mname[0m[0m            = "pool1"
+2020-04-03T02:22:50.2314977Z           [32m+[0m [0m[1m[0mos_disk_size_gb[0m[0m = 30
+2020-04-03T02:22:50.2315534Z           [32m+[0m [0m[1m[0mos_type[0m[0m         = "Linux"
+2020-04-03T02:22:50.2316326Z           [32m+[0m [0m[1m[0mtype[0m[0m            = "VirtualMachineScaleSets"
+2020-04-03T02:22:50.2316955Z           [32m+[0m [0m[1m[0mvm_size[0m[0m         = "Standard_D1_v2"
+2020-04-03T02:22:50.2317573Z           [32m+[0m [0m[1m[0mvnet_subnet_id[0m[0m  = (known after apply)
+2020-04-03T02:22:50.2317867Z         }
+2020-04-03T02:22:50.2317993Z 
+2020-04-03T02:22:50.2318359Z       [32m+[0m [0mlinux_profile {
+2020-04-03T02:22:50.2318861Z           [32m+[0m [0m[1m[0madmin_username[0m[0m = "aksadmin"
+2020-04-03T02:22:50.2319112Z 
+2020-04-03T02:22:50.2319454Z           [32m+[0m [0mssh_key {
+2020-04-03T02:22:50.2319936Z               [32m+[0m [0m[1m[0mkey_data[0m[0m = <<~EOT
+2020-04-03T02:22:50.2321489Z                     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDXczzmMPpqH4DRggz2tCjGSivMq4CKstaA/8tCKOZNzJV1Bg1s7WuVcxb2Snd4HoqU4ssLuLWy1mGZ0878L7wuSM9uc18pnrskLPcBt4kA//25hMxWmNLRcV/C4iYeDlHQJgTP0AMIFTkOnqM+OyrQrZYXCJh3aEpaNqFDP1pbe2rUF9WccgGGlnPmqmFYbotvzjVhmMPlSlJcXscmOcGs2bHvYUQwC+A03XQKpNkL0W6B6ZJnLxrkDrh4jS67U5upJsBLDpy4x0i7HrMZWu6Z2Q6UGCcnljEqjQZjzV2dGsavkAAd3kcgT87ELzv1u2bvWChT/MlXgIEVuBluMsWZ edson@cc-f9bfc69c-776676f767-88ptk
+2020-04-03T02:22:50.2322426Z                 EOT
+2020-04-03T02:22:50.2322620Z             }
+2020-04-03T02:22:50.2322811Z         }
+2020-04-03T02:22:50.2322935Z 
+2020-04-03T02:22:50.2323297Z       [32m+[0m [0mnetwork_profile {
+2020-04-03T02:22:50.2323847Z           [32m+[0m [0m[1m[0mdns_service_ip[0m[0m     = "172.16.0.10"
+2020-04-03T02:22:50.2324451Z           [32m+[0m [0m[1m[0mdocker_bridge_cidr[0m[0m = "172.17.0.1/16"
+2020-04-03T02:22:50.2325049Z           [32m+[0m [0m[1m[0mload_balancer_sku[0m[0m  = "basic"
+2020-04-03T02:22:50.2325611Z           [32m+[0m [0m[1m[0mnetwork_plugin[0m[0m     = "azure"
+2020-04-03T02:22:50.2326288Z           [32m+[0m [0m[1m[0mnetwork_policy[0m[0m     = "azure"
+2020-04-03T02:22:50.2326886Z           [32m+[0m [0m[1m[0mpod_cidr[0m[0m           = (known after apply)
+2020-04-03T02:22:50.2327543Z           [32m+[0m [0m[1m[0mservice_cidr[0m[0m       = "172.16.0.0/16"
+2020-04-03T02:22:50.2327791Z 
+2020-04-03T02:22:50.2328191Z           [32m+[0m [0mload_balancer_profile {
+2020-04-03T02:22:50.2328777Z               [32m+[0m [0m[1m[0meffective_outbound_ips[0m[0m    = (known after apply)
+2020-04-03T02:22:50.2329455Z               [32m+[0m [0m[1m[0mmanaged_outbound_ip_count[0m[0m = (known after apply)
+2020-04-03T02:22:50.2330152Z               [32m+[0m [0m[1m[0moutbound_ip_address_ids[0m[0m   = (known after apply)
+2020-04-03T02:22:50.2330836Z               [32m+[0m [0m[1m[0moutbound_ip_prefix_ids[0m[0m    = (known after apply)
+2020-04-03T02:22:50.2331154Z             }
+2020-04-03T02:22:50.2331343Z         }
+2020-04-03T02:22:50.2331466Z 
+2020-04-03T02:22:50.2331853Z       [32m+[0m [0mrole_based_access_control {
+2020-04-03T02:22:50.2332364Z           [32m+[0m [0m[1m[0menabled[0m[0m = true
+2020-04-03T02:22:50.2332620Z         }
+2020-04-03T02:22:50.2332761Z 
+2020-04-03T02:22:50.2333121Z       [32m+[0m [0mservice_principal {
+2020-04-03T02:22:50.2334339Z           [32m+[0m [0m[1m[0mclient_id[0m[0m     = "***"
+2020-04-03T02:22:50.2334929Z           [32m+[0m [0m[1m[0mclient_secret[0m[0m = (sensitive value)
+2020-04-03T02:22:50.2335235Z         }
+2020-04-03T02:22:50.2335394Z     }
+2020-04-03T02:22:50.2335509Z 
+2020-04-03T02:22:50.2335966Z [1m  # azurerm_resource_group.aks_demo_rg[0m will be created[0m[0m
+2020-04-03T02:22:50.2336535Z [0m  [32m+[0m[0m resource "azurerm_resource_group" "aks_demo_rg" {
+2020-04-03T02:22:50.2337113Z       [32m+[0m [0m[1m[0mid[0m[0m       = (known after apply)
+2020-04-03T02:22:50.2337640Z       [32m+[0m [0m[1m[0mlocation[0m[0m = "eastus"
+2020-04-03T02:22:50.2338183Z       [32m+[0m [0m[1m[0mname[0m[0m     = "AKSCluster-RG"
+2020-04-03T02:22:50.2338737Z       [32m+[0m [0m[1m[0mtags[0m[0m     = (known after apply)
+2020-04-03T02:22:50.2339018Z     }
+2020-04-03T02:22:50.2339212Z 
+2020-04-03T02:22:50.2339647Z [1m  # azurerm_subnet.aks_subnet[0m will be created[0m[0m
+2020-04-03T02:22:50.2340196Z [0m  [32m+[0m[0m resource "azurerm_subnet" "aks_subnet" {
+2020-04-03T02:22:50.2340831Z       [32m+[0m [0m[1m[0maddress_prefix[0m[0m                                 = "10.1.0.0/16"
+2020-04-03T02:22:50.2341525Z       [32m+[0m [0m[1m[0menforce_private_link_endpoint_network_policies[0m[0m = false
+2020-04-03T02:22:50.2342185Z       [32m+[0m [0m[1m[0menforce_private_link_service_network_policies[0m[0m  = false
+2020-04-03T02:22:50.2342907Z       [32m+[0m [0m[1m[0mid[0m[0m                                             = (known after apply)
+2020-04-03T02:22:50.2343628Z       [32m+[0m [0m[1m[0mip_configurations[0m[0m                              = (known after apply)
+2020-04-03T02:22:50.2344353Z       [32m+[0m [0m[1m[0mname[0m[0m                                           = "aks_subnet"
+2020-04-03T02:22:50.2345056Z       [32m+[0m [0m[1m[0mresource_group_name[0m[0m                            = "AKSCluster-RG"
+2020-04-03T02:22:50.2345760Z       [32m+[0m [0m[1m[0mvirtual_network_name[0m[0m                           = "aksvnet"
+2020-04-03T02:22:50.2346072Z     }
+2020-04-03T02:22:50.2346204Z 
+2020-04-03T02:22:50.2346637Z [1m  # azurerm_virtual_network.aks_vnet[0m will be created[0m[0m
+2020-04-03T02:22:50.2347212Z [0m  [32m+[0m[0m resource "azurerm_virtual_network" "aks_vnet" {
+2020-04-03T02:22:50.2347753Z       [32m+[0m [0m[1m[0maddress_space[0m[0m       = [
+2020-04-03T02:22:50.2348243Z           [32m+[0m [0m"10.0.0.0/12",
+2020-04-03T02:22:50.2348666Z         ]
+2020-04-03T02:22:50.2349156Z       [32m+[0m [0m[1m[0mid[0m[0m                  = (known after apply)
+2020-04-03T02:22:50.2349748Z       [32m+[0m [0m[1m[0mlocation[0m[0m            = "eastus"
+2020-04-03T02:22:50.2350427Z       [32m+[0m [0m[1m[0mname[0m[0m                = "aksvnet"
+2020-04-03T02:22:50.2351025Z       [32m+[0m [0m[1m[0mresource_group_name[0m[0m = "AKSCluster-RG"
+2020-04-03T02:22:50.2351624Z       [32m+[0m [0m[1m[0mtags[0m[0m                = (known after apply)
+2020-04-03T02:22:50.2351888Z 
+2020-04-03T02:22:50.2352218Z       [32m+[0m [0msubnet {
+2020-04-03T02:22:50.2352750Z           [32m+[0m [0m[1m[0maddress_prefix[0m[0m = (known after apply)
+2020-04-03T02:22:50.2353352Z           [32m+[0m [0m[1m[0mid[0m[0m             = (known after apply)
+2020-04-03T02:22:50.2353965Z           [32m+[0m [0m[1m[0mname[0m[0m           = (known after apply)
+2020-04-03T02:22:50.2354563Z           [32m+[0m [0m[1m[0msecurity_group[0m[0m = (known after apply)
+2020-04-03T02:22:50.2354850Z         }
+2020-04-03T02:22:50.2355023Z     }
+2020-04-03T02:22:50.2355139Z 
+2020-04-03T02:22:50.2355577Z [0m[1mPlan:[0m 5 to add, 0 to change, 0 to destroy.[0m
+2020-04-03T02:22:50.2355968Z [33m
+2020-04-03T02:22:50.2356740Z [1m[33mWarning: [0m[0m[1m"agent_pool_profile": [DEPRECATED] This has been replaced by `default_node_pool` and will be removed in version 2.0 of the AzureRM Provider[0m
+2020-04-03T02:22:50.2357186Z 
+2020-04-03T02:22:50.2357663Z [0m  on aks_cluster.tf line 6, in resource "azurerm_kubernetes_cluster" "aks_k2":
+2020-04-03T02:22:50.2358258Z    6: resource "azurerm_kubernetes_cluster" "aks_k2" [4m{[0m
+2020-04-03T02:22:50.2358644Z [0m
+2020-04-03T02:22:50.2358947Z [0m[0m
+2020-04-03T02:22:50.2359071Z 
+2020-04-03T02:22:50.2359527Z ------------------------------------------------------------------------
+2020-04-03T02:22:50.2359762Z 
+2020-04-03T02:22:50.2360039Z This plan was saved to: /home/vsts/work/1/terraform_out/terraform_aks_out
+2020-04-03T02:22:50.2360302Z 
+2020-04-03T02:22:50.2360556Z To perform exactly these actions, run the following command to apply:
+2020-04-03T02:22:50.2360937Z     terraform apply "/home/vsts/work/1/terraform_out/terraform_aks_out"
+2020-04-03T02:22:50.2361189Z 
+2020-04-03T02:22:51.1827922Z Releasing state lock. This may take a few moments...
+2020-04-03T02:22:51.1829959Z 
+2020-04-03T02:22:51.2887875Z ##[section]Finishing: terraform plan
+2020-04-03T02:22:51.2914491Z ##[section]Starting: terraform apply
+2020-04-03T02:22:51.2923837Z ==============================================================================
+2020-04-03T02:22:51.2924192Z Task         : Terraform CLI
+2020-04-03T02:22:51.2924507Z Description  : Execute terraform cli commands
+2020-04-03T02:22:51.2924769Z Version      : 0.5.2
+2020-04-03T02:22:51.2925032Z Author       : Charles Zipp
+2020-04-03T02:22:51.2925284Z Help         : 
+2020-04-03T02:22:51.2925602Z ==============================================================================
+2020-04-03T02:22:51.6869534Z [command]/usr/local/bin/terraform version
+2020-04-03T02:22:51.7393352Z Terraform v0.12.24
+2020-04-03T02:22:52.2047115Z + provider.azurerm v1.44.0
+2020-04-03T02:22:52.2073783Z 
+2020-04-03T02:22:52.2202081Z [command]/usr/local/bin/terraform apply -auto-approve /home/vsts/work/1/terraform_out/terraform_aks_out
+2020-04-03T02:22:52.3323504Z [33m
+2020-04-03T02:22:52.3325147Z [1m[33mWarning: [0m[0m[1m"arm_subscription_id": [DEPRECATED] `arm_subscription_id` has been replaced by `subscription_id`[0m
+2020-04-03T02:22:52.3325801Z 
+2020-04-03T02:22:52.3326315Z [0m[0m[0m
+2020-04-03T02:22:52.3326841Z [33m
+2020-04-03T02:22:52.3327630Z [1m[33mWarning: [0m[0m[1m"arm_client_id": [DEPRECATED] `arm_client_id` has been replaced by `client_id`[0m
+2020-04-03T02:22:52.3329664Z 
+2020-04-03T02:22:52.3330386Z [0m[0m[0m
+2020-04-03T02:22:52.3330921Z [33m
+2020-04-03T02:22:52.3331755Z [1m[33mWarning: [0m[0m[1m"arm_client_secret": [DEPRECATED] `arm_client_secret` has been replaced by `client_secret`[0m
+2020-04-03T02:22:52.3338846Z 
+2020-04-03T02:22:52.3339353Z [0m[0m[0m
+2020-04-03T02:22:52.3339673Z [33m
+2020-04-03T02:22:52.3340325Z [1m[33mWarning: [0m[0m[1m"arm_tenant_id": [DEPRECATED] `arm_tenant_id` has been replaced by `tenant_id`[0m
+2020-04-03T02:22:52.3340890Z 
+2020-04-03T02:22:52.3341212Z [0m[0m[0m
+2020-04-03T02:22:53.3599173Z Acquiring state lock. This may take a few moments...
+2020-04-03T02:22:59.3817615Z [0m[1mazurerm_resource_group.aks_demo_rg: Creating...[0m[0m
+2020-04-03T02:23:02.0565311Z [0m[1mazurerm_resource_group.aks_demo_rg: Creation complete after 3s [id=/subscriptions/d2b8c7ca-fc1a-4c03-aeea-9740237b2bb4/resourceGroups/AKSCluster-RG][0m[0m
+2020-04-03T02:23:02.0592424Z [0m[1mazurerm_virtual_network.aks_vnet: Creating...[0m[0m
+2020-04-03T02:23:02.0629694Z [0m[1mazurerm_container_registry.acr: Creating...[0m[0m
+2020-04-03T02:23:12.0597429Z [0m[1mazurerm_virtual_network.aks_vnet: Still creating... [10s elapsed][0m[0m
+2020-04-03T02:23:12.0622173Z [0m[1mazurerm_container_registry.acr: Still creating... [10s elapsed][0m[0m
+2020-04-03T02:23:13.6352757Z [0m[1mazurerm_container_registry.acr: Creation complete after 12s [id=/subscriptions/d2b8c7ca-fc1a-4c03-aeea-9740237b2bb4/resourceGroups/AKSCluster-RG/providers/Microsoft.ContainerRegistry/registries/acraksterraform][0m[0m
+2020-04-03T02:23:19.6686897Z [0m[1mazurerm_virtual_network.aks_vnet: Creation complete after 18s [id=/subscriptions/d2b8c7ca-fc1a-4c03-aeea-9740237b2bb4/resourceGroups/AKSCluster-RG/providers/Microsoft.Network/virtualNetworks/aksvnet][0m[0m
+2020-04-03T02:23:19.6731875Z [0m[1mazurerm_subnet.aks_subnet: Creating...[0m[0m
+2020-04-03T02:23:21.0945593Z [0m[1mazurerm_subnet.aks_subnet: Creation complete after 1s [id=/subscriptions/d2b8c7ca-fc1a-4c03-aeea-9740237b2bb4/resourceGroups/AKSCluster-RG/providers/Microsoft.Network/virtualNetworks/aksvnet/subnets/aks_subnet][0m[0m
+2020-04-03T02:23:21.1109438Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Creating...[0m[0m
+2020-04-03T02:23:31.1116476Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [10s elapsed][0m[0m
+2020-04-03T02:23:41.1117587Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [20s elapsed][0m[0m
+2020-04-03T02:23:51.1121644Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [30s elapsed][0m[0m
+2020-04-03T02:24:01.1124074Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [40s elapsed][0m[0m
+2020-04-03T02:24:11.1127114Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [50s elapsed][0m[0m
+2020-04-03T02:24:21.1127627Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [1m0s elapsed][0m[0m
+2020-04-03T02:24:31.1130029Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [1m10s elapsed][0m[0m
+2020-04-03T02:24:41.1131681Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [1m20s elapsed][0m[0m
+2020-04-03T02:24:51.1133942Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [1m30s elapsed][0m[0m
+2020-04-03T02:25:01.1136535Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [1m40s elapsed][0m[0m
+2020-04-03T02:25:11.1138543Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [1m50s elapsed][0m[0m
+2020-04-03T02:25:21.1140675Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [2m0s elapsed][0m[0m
+2020-04-03T02:25:31.1142515Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [2m10s elapsed][0m[0m
+2020-04-03T02:25:41.1145144Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [2m20s elapsed][0m[0m
+2020-04-03T02:25:51.1148006Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [2m30s elapsed][0m[0m
+2020-04-03T02:26:01.1149716Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [2m40s elapsed][0m[0m
+2020-04-03T02:26:11.1153715Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [2m50s elapsed][0m[0m
+2020-04-03T02:26:21.1155505Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [3m0s elapsed][0m[0m
+2020-04-03T02:26:31.1157943Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [3m10s elapsed][0m[0m
+2020-04-03T02:26:41.1160482Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [3m20s elapsed][0m[0m
+2020-04-03T02:26:51.1163414Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [3m30s elapsed][0m[0m
+2020-04-03T02:27:01.1166846Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [3m40s elapsed][0m[0m
+2020-04-03T02:27:11.1169403Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [3m50s elapsed][0m[0m
+2020-04-03T02:27:21.1170347Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [4m0s elapsed][0m[0m
+2020-04-03T02:27:31.1172832Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [4m10s elapsed][0m[0m
+2020-04-03T02:27:41.1174735Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [4m20s elapsed][0m[0m
+2020-04-03T02:27:51.1178196Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [4m30s elapsed][0m[0m
+2020-04-03T02:28:01.1180265Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [4m40s elapsed][0m[0m
+2020-04-03T02:28:11.1182277Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [4m50s elapsed][0m[0m
+2020-04-03T02:28:21.1195031Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [5m0s elapsed][0m[0m
+2020-04-03T02:28:31.1195498Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [5m10s elapsed][0m[0m
+2020-04-03T02:28:41.1199589Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [5m20s elapsed][0m[0m
+2020-04-03T02:28:51.1194197Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [5m30s elapsed][0m[0m
+2020-04-03T02:29:01.1200484Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [5m40s elapsed][0m[0m
+2020-04-03T02:29:11.1198712Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [5m50s elapsed][0m[0m
+2020-04-03T02:29:21.1200254Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [6m0s elapsed][0m[0m
+2020-04-03T02:29:31.1203568Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [6m10s elapsed][0m[0m
+2020-04-03T02:29:41.1205393Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [6m20s elapsed][0m[0m
+2020-04-03T02:29:51.1207976Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [6m30s elapsed][0m[0m
+2020-04-03T02:30:01.1211096Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [6m40s elapsed][0m[0m
+2020-04-03T02:30:11.1215126Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [6m50s elapsed][0m[0m
+2020-04-03T02:30:21.1216205Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [7m0s elapsed][0m[0m
+2020-04-03T02:30:31.1218928Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [7m10s elapsed][0m[0m
+2020-04-03T02:30:41.1222689Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [7m20s elapsed][0m[0m
+2020-04-03T02:30:51.1224913Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Still creating... [7m30s elapsed][0m[0m
+2020-04-03T02:30:53.2636875Z [0m[1mazurerm_kubernetes_cluster.aks_k2: Creation complete after 7m32s [id=/subscriptions/d2b8c7ca-fc1a-4c03-aeea-9740237b2bb4/resourcegroups/AKSCluster-RG/providers/Microsoft.ContainerService/managedClusters/AKSTerraform][0m[0m
+2020-04-03T02:30:54.5717684Z [0m[1m[32m
+2020-04-03T02:30:54.5720475Z Apply complete! Resources: 5 added, 0 changed, 0 destroyed.[0m
+2020-04-03T02:30:54.9719118Z Releasing state lock. This may take a few moments...
+2020-04-03T02:30:55.0458594Z [0m[1m[32m
+2020-04-03T02:30:55.0468916Z Outputs:
+2020-04-03T02:30:55.0469069Z 
+2020-04-03T02:30:55.0507353Z client_certificate = LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUUvRENDQXVTZ0F3SUJBZ0lRYXVCb0lPeGkzdlRBUDRXK3NiVCtaREFOQmdrcWhraUc5dzBCQVFzRkFEQU4KTVFzd0NRWURWUVFERXdKallUQWVGdzB5TURBME1ETXdNakV6TXpaYUZ3MHlNakEwTURNd01qSXpNelphTURBeApGekFWQmdOVkJBb1REbk41YzNSbGJUcHRZWE4wWlhKek1SVXdFd1lEVlFRREV3eHRZWE4wWlhKamJHbGxiblF3CmdnSWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUNEd0F3Z2dJS0FvSUNBUURDUmo4bk4xWm1LeXF1aVcrZzgxeHYKT2dVN1JTdGNIQXVMUUhiYTVtTit3NVIwd3VsVFZQTkJWZklyUm15cXBOMWNoNE9RZGpHQitLTmtpRndPb08xdQpqaWRmKzdFbGE1ZDVINkYyb1ZYcVpxdjJMcG5nSXRmWHdnY2NyREFWdzA3RzNVb2UzVzUvV1NXeWF0SlBrbmlKCnM4dlpCR1RxdU5mZFBhVXU5K0pHdVBvZlp6bTBObWxBWkkzQitlS0J0bzk0b3NuYnNablRtQjJTV1UwRHJlMWMKbWhqVDdZdUdBYnFDRW8rRU80UCtBcjFBcmxBcHFpMmprRDRmTHBidndJUThBeng4eWN3aUlhaTBXUXBvSEd5ZgpiUWpmRkEwL1NzdE04cUJOdFQ3bGVtSWZGcjd4Y0tnNjFrTlVMVEQvOTJKdEd1emIydnhqK08yMXVZajJ6NkJGCmJRN0wrWTIwRG5PSFFkTDF5MytvUVQvMFNjTFBHZjJGdHliek4zZm0xOGF2NVVJY0VOaXVNV1ZCWGI5ZXRxbSsKOWJzcDYrQ1lUNTgybnpScFNFa2dnbVJUZTZ3TFJzUWNRSTZmblMwUElRL05GMUswUlpZa3ZvYmtXZFJGMFlVZgp4QmdKVHNYMTU0ODF0TTlLYzZiNVpxM2NwWlpIMGFWTVMrUFVRcjdaMzIxQzdSY0JqN0lxV0NZNlBMYzdRQk82CncrSFZOa3F5UlV4NmpDRkJFTGp2TUVyMTBCdGNrclVXMEZnM2VpLzV6aUQ1THl0enpBNDJpb29Yeml4Nk92SmwKcU5VczhlN0VxTXRKNzVkdDRybE1Za2JLaHdMTGk3a2dLUEZ1Z1JYQ0tIeFJ6SjVjWTRyYzYrUlQ3bEF5TkhOdwprZk16RFI3UTJzUTBIMUs2NXU1RjhRSURBUUFCb3pVd016QU9CZ05WSFE4QkFmOEVCQU1DQmFBd0V3WURWUjBsCkJBd3dDZ1lJS3dZQkJRVUhBd0l3REFZRFZSMFRBUUgvQkFJd0FEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FnRUEKbzBxNExKeW85Z2hKVEkrY3ZUV2xZcklsc1BIejFob2VsMFpjY0t3RmZnNnpscWRMN0taeFJXanM0ZmtFRjdhTQptTk43TTJYekdwRS81Qy90K1RReWw5RHcwSlhJSkpwZktEcENHb3h2MVVFTEZVVEpsYXJiRWxRb1I5SnBvRlJUCjM0N0RkY0UwdE41aE03UFVTdE9UNVlHSkx3TmFRa2xYenNGQ0pVRktSN0g2R201eXM0cU8yaXlvTXNKZk82THgKS2FSVU9oak1aOEVadld1NXdzVVMxZDBGTTFkaUtxNVVDVlpxaHF1MVk0aEpRT3BjYmpwWTBMSkQzQlU5RGtQUApkZnJtUjB6YzFNM2tTdFlpYkorNFpoT2VJa2dDSjB6YXhIODA5M2h0M0Z5ditiTTh6UlNOelJPVDNGQ2RrTHBxCmpVWURCNjFOQWNOeGNiSFlQMXZDcU12RGEvdTU4RW1JRU5zbkxmcXpERC9jdWhKVnUzdFVrS1Rrd2VEdStTTUkKd3dUVzVqV3hHSXQ1amlRSnpzbmt6T09yTUY4RHRCZ3FGdXd5OFlHcFJQMlpBbFVVVm5NVUlqYk9DVlNJeGRFMQpWTkpmRTNUbnI3SHpkZ3N1a1pBekZSdGVqME1GaDY1cWZQR2VBQXhtUDBrdkxVT01mb3l1SCtjb2ZuRVdoSy9NCm1uTFVmOEd3K1dxVlFPcjlBbnFDVjZXdHJsSU1FV2dZQ2ZZS0ZVcWhRWjdseS9nbVZEelJGa1ZzTGo2SVA5ZlgKREZmMmpBM2xoU3hNUGFuNWhHS2JreXdCUlhJa0hpSXdaa1NBUDZ0dlFtK2lOMUZTT0RhdVJ1Z3ZzUjhuNTh4cQpLRXZ2ajlzdFdPblgyZmlxTnNWRmxTaXNyQldtdzFHMDRXNWNZMGdNS25zPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+2020-04-03T02:30:55.0604513Z kube_config = apiVersion: v1
+2020-04-03T02:30:55.0604755Z clusters:
+2020-04-03T02:30:55.0605508Z - cluster:
+2020-04-03T02:30:55.0612332Z     certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUV5VENDQXJHZ0F3SUJBZ0lRVnJWRVIzcDMwNTFiL2xmTlVqcThCakFOQmdrcWhraUc5dzBCQVFzRkFEQU4KTVFzd0NRWURWUVFERXdKallUQWdGdzB5TURBME1ETXdNakV6TXpaYUdBOHlNRFV3TURRd016QXlNak16TmxvdwpEVEVMTUFrR0ExVUVBeE1DWTJFd2dnSWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUNEd0F3Z2dJS0FvSUNBUURECklZekwvUWtVQjNndldnaXFvM3pQZXVGNjdJR2tFTG42d1pEWEFYWjZVcjZlMzVNTC9JNmZYVWk2Mmg1bnJEcU8KMEF6TllBcTcwU1lMNEhtV0FxVEVpaVFkS3JPMTVZRTNrOWs1Qm9CM1JKdFAwNlJaUUVTNnNTazhGaDMrVWVFRgo3S1pIL2RxcXpqeWdVWkxicjlXbUYvZnJud1VKdHZ5ekVBc0VUbDFtaGVJUEJGd0JkcmZITzZCN1FNWDRuZklOCmtxUFZObnlYOHNDTjBCdlMzLy9kU0xrWWpYellGRVcyc0RFL3FhSm9tVzNOOFA1QUlYdlg5ZTlEYnMrUHRvbTAKNllNTHlsNVJtQmgyTWM4cTBDbmkwaU1teGplamJVbmwxd0ZnOVlyQzJwTUV4T1NDdDlCcUlYNFhHSEVTTU0vUgo0UWFIb1pKam1tdHAwOU1ua3R2NHJETGREOVNPb1RPK3dWTFZmSmlKZ2VjT096RktVYU9KREJRS3h1VnZDYWNYCjVmWldQcStsK291am11N3FoS3liYWZWNjVVdkdhTTlhbUk3SkdMdytVOUVXSWhWbWFiS2pyQUM2VGlCcjE0S1oKUUpWNlhJVU1LdG5nbENmWk5MbnNKYzMrSFkreXEwcGtTNXlXMmthR0hjZ3dLenZKRENMelREajhPUFRBQ3BoOAowRFMyNncvZVA2K2l1MHFSbDUrYzlGM0xpNWk5K3JyUDNiTE4vTDR5Y3plNVlMcHBPZlBsSFN4d0pVN1Z2Mkk2CldoWnN3T01lMTJkbGZBMTVTdGdYQmRvMDA5RnBoSU1YcGgvS2dCeHJkZURDOEtZbHJoSkxObDlxUEJ5YXlONWYKVnozYjRzL2wzekovd1B3L3J2RU5TY1g0UTFSS2Z5b0lkbTlqOVFaUjd3SURBUUFCb3lNd0lUQU9CZ05WSFE4QgpBZjhFQkFNQ0FxUXdEd1lEVlIwVEFRSC9CQVV3QXdFQi96QU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FnRUFaQ3ZpCjd2MmYwN00xeHhaME5HQnFRTlZTMDA3U2pQa0FKMVg0RW5zN1dWUmEwWXNvdFdTbnd6MFBIV2FNTjFERzNRS1oKaTY1VlBkQnFobWp2TC94RkhqSGdrZGxtNERxNk04QWtFT1htVEYvOG80RVlTWTlmU0FuMXYxYzBnbXFPNDB6eApNcGJKNDF5T05QVkhCZW1mc0R3ZEd4cmJvVmpoTngzZnU1b3hNUXRxSFhRaWVFY2hLdmw5c1F6YzluTFUxVlE1CkViSlhOR3B5SlRURW5vdUZwaFN1R3pLcWtsTFNHTDBlYmttQ0dhZVFxUWpOcVFRcHdHaEhYQjNnY0xpT0FBN3IKM25pQ2xCODY4RDJ3cEdHWW1UakszM1g2bVJ4cDJNR1lGNWMvK2VhaGF1b0tWa0xvNTFkUWdDREg2bnFZU3IwTQpnTE1KMzFLcUYvOWdBM0ExNy9WNHBLV2FBNTE3YnVPQm5YZk0rMUZJZ3g2Y3puMDVnWUljRVozdXFqcVhMNEtkCkJObmxrMnVTaEE2STM0RWJnc0VFKy91Wlp5K0VhclRheW1pejAwMnEyNndQL1J1VUVPSURUdFYxV0Q3S1h1SjEKSTFtVSsxZ2R2L2VhMzEzOGR2TkFkMXdmY25jNmdHalVLa0J4UlQ2UXovU3BhQjdjYWR4a21vczNoemFDMnpXdAoxWDI2UHhVU3FNRjlPVm1XaTlBRWh2L0JQYlFxMmEyR0piVzA1c1ZZM0RkR2ZGV1djYys5Z1ZIa1ByREVMdUR4CmdnRVpaZzVWY2ZsTElmT1ViUm8vWlp1Y2I2VGpabzJhb0NQb2xYeTVLUmtPcldIWFdvTHZaSHppTXNEMHZySDEKbmRCWGtWR2V2UURkaXRQeU1lTmFHNFpxY2NaYVh5SkZyc1dxOStVPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+2020-04-03T02:30:55.0616972Z     server: https://aksterraform-d319589f.hcp.eastus.azmk8s.io:443
+2020-04-03T02:30:55.0617295Z   name: AKSTerraform
+2020-04-03T02:30:55.0617507Z contexts:
+2020-04-03T02:30:55.0617814Z - context:
+2020-04-03T02:30:55.0618034Z     cluster: AKSTerraform
+2020-04-03T02:30:55.0618480Z     user: clusterUser_AKSCluster-RG_AKSTerraform
+2020-04-03T02:30:55.0618764Z   name: AKSTerraform
+2020-04-03T02:30:55.0619140Z current-context: AKSTerraform
+2020-04-03T02:30:55.0619374Z kind: Config
+2020-04-03T02:30:55.0619564Z preferences: {}
+2020-04-03T02:30:55.0619739Z users:
+2020-04-03T02:30:55.0620145Z - name: clusterUser_AKSCluster-RG_AKSTerraform
+2020-04-03T02:30:55.0620382Z   user:
+2020-04-03T02:30:55.0627103Z     client-certificate-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUUvRENDQXVTZ0F3SUJBZ0lRYXVCb0lPeGkzdlRBUDRXK3NiVCtaREFOQmdrcWhraUc5dzBCQVFzRkFEQU4KTVFzd0NRWURWUVFERXdKallUQWVGdzB5TURBME1ETXdNakV6TXpaYUZ3MHlNakEwTURNd01qSXpNelphTURBeApGekFWQmdOVkJBb1REbk41YzNSbGJUcHRZWE4wWlhKek1SVXdFd1lEVlFRREV3eHRZWE4wWlhKamJHbGxiblF3CmdnSWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUNEd0F3Z2dJS0FvSUNBUURDUmo4bk4xWm1LeXF1aVcrZzgxeHYKT2dVN1JTdGNIQXVMUUhiYTVtTit3NVIwd3VsVFZQTkJWZklyUm15cXBOMWNoNE9RZGpHQitLTmtpRndPb08xdQpqaWRmKzdFbGE1ZDVINkYyb1ZYcVpxdjJMcG5nSXRmWHdnY2NyREFWdzA3RzNVb2UzVzUvV1NXeWF0SlBrbmlKCnM4dlpCR1RxdU5mZFBhVXU5K0pHdVBvZlp6bTBObWxBWkkzQitlS0J0bzk0b3NuYnNablRtQjJTV1UwRHJlMWMKbWhqVDdZdUdBYnFDRW8rRU80UCtBcjFBcmxBcHFpMmprRDRmTHBidndJUThBeng4eWN3aUlhaTBXUXBvSEd5ZgpiUWpmRkEwL1NzdE04cUJOdFQ3bGVtSWZGcjd4Y0tnNjFrTlVMVEQvOTJKdEd1emIydnhqK08yMXVZajJ6NkJGCmJRN0wrWTIwRG5PSFFkTDF5MytvUVQvMFNjTFBHZjJGdHliek4zZm0xOGF2NVVJY0VOaXVNV1ZCWGI5ZXRxbSsKOWJzcDYrQ1lUNTgybnpScFNFa2dnbVJUZTZ3TFJzUWNRSTZmblMwUElRL05GMUswUlpZa3ZvYmtXZFJGMFlVZgp4QmdKVHNYMTU0ODF0TTlLYzZiNVpxM2NwWlpIMGFWTVMrUFVRcjdaMzIxQzdSY0JqN0lxV0NZNlBMYzdRQk82CncrSFZOa3F5UlV4NmpDRkJFTGp2TUVyMTBCdGNrclVXMEZnM2VpLzV6aUQ1THl0enpBNDJpb29Yeml4Nk92SmwKcU5VczhlN0VxTXRKNzVkdDRybE1Za2JLaHdMTGk3a2dLUEZ1Z1JYQ0tIeFJ6SjVjWTRyYzYrUlQ3bEF5TkhOdwprZk16RFI3UTJzUTBIMUs2NXU1RjhRSURBUUFCb3pVd016QU9CZ05WSFE4QkFmOEVCQU1DQmFBd0V3WURWUjBsCkJBd3dDZ1lJS3dZQkJRVUhBd0l3REFZRFZSMFRBUUgvQkFJd0FEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FnRUEKbzBxNExKeW85Z2hKVEkrY3ZUV2xZcklsc1BIejFob2VsMFpjY0t3RmZnNnpscWRMN0taeFJXanM0ZmtFRjdhTQptTk43TTJYekdwRS81Qy90K1RReWw5RHcwSlhJSkpwZktEcENHb3h2MVVFTEZVVEpsYXJiRWxRb1I5SnBvRlJUCjM0N0RkY0UwdE41aE03UFVTdE9UNVlHSkx3TmFRa2xYenNGQ0pVRktSN0g2R201eXM0cU8yaXlvTXNKZk82THgKS2FSVU9oak1aOEVadld1NXdzVVMxZDBGTTFkaUtxNVVDVlpxaHF1MVk0aEpRT3BjYmpwWTBMSkQzQlU5RGtQUApkZnJtUjB6YzFNM2tTdFlpYkorNFpoT2VJa2dDSjB6YXhIODA5M2h0M0Z5ditiTTh6UlNOelJPVDNGQ2RrTHBxCmpVWURCNjFOQWNOeGNiSFlQMXZDcU12RGEvdTU4RW1JRU5zbkxmcXpERC9jdWhKVnUzdFVrS1Rrd2VEdStTTUkKd3dUVzVqV3hHSXQ1amlRSnpzbmt6T09yTUY4RHRCZ3FGdXd5OFlHcFJQMlpBbFVVVm5NVUlqYk9DVlNJeGRFMQpWTkpmRTNUbnI3SHpkZ3N1a1pBekZSdGVqME1GaDY1cWZQR2VBQXhtUDBrdkxVT01mb3l1SCtjb2ZuRVdoSy9NCm1uTFVmOEd3K1dxVlFPcjlBbnFDVjZXdHJsSU1FV2dZQ2ZZS0ZVcWhRWjdseS9nbVZEelJGa1ZzTGo2SVA5ZlgKREZmMmpBM2xoU3hNUGFuNWhHS2JreXdCUlhJa0hpSXdaa1NBUDZ0dlFtK2lOMUZTT0RhdVJ1Z3ZzUjhuNTh4cQpLRXZ2ajlzdFdPblgyZmlxTnNWRmxTaXNyQldtdzFHMDRXNWNZMGdNS25zPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+2020-04-03T02:30:55.0643793Z     client-key-data: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlKS1FJQkFBS0NBZ0VBd2tZL0p6ZFdaaXNxcm9sdm9QTmNiem9GTzBVclhCd0xpMEIyMnVaamZzT1VkTUxwClUxVHpRVlh5SzBac3FxVGRYSWVEa0hZeGdmaWpaSWhjRHFEdGJvNG5YL3V4Sld1WGVSK2hkcUZWNm1hcjlpNloKNENMWDE4SUhIS3d3RmNOT3h0MUtIdDF1ZjFrbHNtclNUNUo0aWJQTDJRUms2cmpYM1QybEx2ZmlScmo2SDJjNQp0RFpwUUdTTndmbmlnYmFQZUtMSjI3R1owNWdka2xsTkE2M3RYSm9ZMCsyTGhnRzZnaEtQaER1RC9nSzlRSzVRCkthb3RvNUErSHk2Vzc4Q0VQQU04Zk1uTUlpR290RmtLYUJ4c24yMEkzeFFOUDByTFRQS2dUYlUrNVhwaUh4YSsKOFhDb090WkRWQzB3Ly9kaWJScnMyOXI4WS9qdHRibUk5cytnUlcwT3kvbU50QTV6aDBIUzljdC9xRUUvOUVuQwp6eG45aGJjbTh6ZDM1dGZHcitWQ0hCRFlyakZsUVYyL1hyYXB2dlc3S2V2Z21FK2ZOcDgwYVVoSklJSmtVM3VzCkMwYkVIRUNPbjUwdER5RVB6UmRTdEVXV0pMNkc1Rm5VUmRHRkg4UVlDVTdGOWVlUE5iVFBTbk9tK1dhdDNLV1cKUjlHbFRFdmoxRUsrMmQ5dFF1MFhBWSt5S2xnbU9qeTNPMEFUdXNQaDFUWktza1ZNZW93aFFSQzQ3ekJLOWRBYgpYSksxRnRCWU4zb3YrYzRnK1M4cmM4d09Ob3FLRjg0c2VqcnlaYWpWTFBIdXhLakxTZStYYmVLNVRHSkd5b2NDCnk0dTVJQ2p4Ym9FVndpaDhVY3llWEdPSzNPdmtVKzVRTWpSemNKSHpNdzBlME5yRU5COVN1dWJ1UmZFQ0F3RUEKQVFLQ0FnQXpXclplKzNYUFZDSFlPV1JVdTMvM3R2S2pGRW05ODN2cHQ0U3pvS3MwV3libkpvN2ZCRm01TDZydwpYWkZrR21pWmlRanlLd3d6T3pLVjVLWFJDQ0U3VkVCOFV1QWs4Q2YrVUtveDNid0VWbGVtbi9MMUdNRE51L0I5ClY5YnVLYzZ0S3RucEJzZXF5am40eTl3RVJNZXdQdUxuM3cxK0xwYUJXVVpOQUNIRWFDbFdHOGRaSi9qeW1LSVEKWUtuTGVDSzgxT3RmTTdkaUE1ZnRrOFdUNzJvTFRJQzdwTk40L1FQOFZrT3h4TG5EYjUzdmR5U2hudWFwa2Z1Wgo2b3JqblpSVytOUUllSitKZGpST1dDczBFaTkwaFRJUEpoSEtaVThRYkNLTDZCbFVOK0d3TGljVFU2Qmt6VGJICkRac2lUcGFxR0svNy9nc3hzaC9FSmVOYXVzKzJrOHRzWEhpeDRpSXFPNHpmbUlKYko5TXAxMTQ3WlNFcEJER0sKZmVyeDdBOHNaMTJkV3pVdUtERUhwdVlOc2llbFhWcElKTjUvU3oraW05NEpQVHR2MGJoRE0rMDRRMVR1VHBJVAp6cFFZL2I2UlhDSlFlRzBlc1FnbXJ2bkl5TkZaMlczdFE2eFVCVVo5dVRLSWNKOGs2Y0FUVkZWOTQzUXlvZ2UrClZsR2FNL3oyT1djUXRqYWhpSlordjhZdUZoaFRQV1A4aXhxRWk4TlRObDZZZHg1amxHbEJqeGpTdzRxVU5sMHgKYWZiRmZMRXNXbFpydnM4OEV4ZUVXVHNoaTNTZ3B3bzNaY3hiQWpoQ0VQTU9Zcjk3YU0vUy93Qk5CcEtsVXNpVAova0N5cUQ1UzBjNW9ya2cxMXFhaDkxUmNBSGRtOERvSlZhYkw5eWN5eW8zbnNMR25BUUtDQVFFQXh0WlN4Z0FlCldxamQrdkREclV6aFplRnVlaVlpR1NoMkVwait0MEpYQ2FiMVhJek9EekdKYTV1dFNjTTVQL3NhM0gxY2dkSTMKRGNjVzBVaGtpVCtybk5vKyt1cjlBcm5UN0s1ejZLT21RNGpXcko3cFZaUzBCK1dKbWwrb2Q1TGRnNjQ5ZkoxWQpzcUdxVzZ4RnIzYnVucWcxdStmRERvZmI3MlRoRlYxdHRlSFZ6YktRZ0ljZ0Q5MnpmRDdZTitzOVdOOUwyN29pCkJuM2xwejdPK3pJYnliSlhRSEEvdlJaZFpyMnlwM2thYTdjc0lWbHhLMmVUcDFDbW5GdzZZdktBN1lWUE9ISSsKU28rZlR3OXhOMldmUlp4dW91bjJ4UlVNU0dyUWY0VGFXTlRQeWdLQnprZWJoRnVvOGNGcTF4YmlTbTJjSVF0cwpQUk9JN3NIMmxkdnZ5UUtDQVFFQStpQWVTeTVUWmt5aXp3WTBvNk1Xbnhwbm9NdjdKNHBRNFB3bk9XQXVkNy8zCk00Q3Y4QUJDYk1nYVg4dllnRHpzUVhES2g4N1Y2WDRTL0RIUFEzMWFkVHRHUlF4TVlZU041Ky82QzA5UDVPd2MKWWtFc0EwQm5kZXhlSVVZS1hsa1JrR1FGMTVLNEJMZVh4QUJxY2lhZkEwc2wzMU5YRHFBSjFYVFdQaHYyUnFOegphWTRGNEUzNktENzE1dUNSYlp5OHNyaGl0Y2lMYkgvN2JEZUZOY0lEUyt6L1lFbC9JSDJ2cFVoY1o3bUtaTnRHCk8vRjhCTXZWQ1ZzR01scG5sZkZwQmFEZVFaNFdNMlBiTWxYOXBiNDNxSlpTN0lBMlEwNWZHZk9TbllzM3RsZGUKeDRwL2k1MWxBVFdyakhRREs2anUzbHBicEFVdTIzaWEyWXdRYVF6STZRS0NBUUJlTXRzMEFvcGUyUEdSR004YgpJdmtGa3k4TG4xVTRKZnNLQklGbndINExqSlZoS3pQVDd0dnpwdVVKdFB0Q1hHdjFXVTZpRWowU3dlY0ZidzV5CkZ6L3VKMWIrK0tTMHplU2dsR1ZGS1lKekxEakh2dUU4TWg2NFB2NVpyRWZibmpCaldnQzNNTFA4cktwUWsrVFAKbzhDWVdZaGJaUWo3c1ZGNHNJb1IzUmxFdWFEWXVtZksvRGtzU3hQbElNQytmU3VyRnQ2UlVqVWNiamlHYXpNVAp2a0Y3NUltQmRhdzhvSVBQVUw5NnA5emtldnJsTWNKemxiWlY1ZGVJN0FpZEo5WDhzTk0vSXFCd0ltcU93Zm9aCkRJUFFMclFiYWt3R1FscDNWR05DaG1ZSy80Y1JaTzZxRXpLU0dmcUh6ZUlYMURlUW15MEVXcTBFb21TVStEOGgKNy9oQkFvSUJBUUNMUFVQLzhDc0hRTlJGVVJ3T21DUm9yNmRPa1I4Z1ZOUlBXcTl2TmtiSDdQcHRGazlhMkpvaAp1b2RNR3N0TUlCNFpFL1A3QkQ1NnUrOVBxMTdKSUVneUNLeEdsZUVUVEZvKzZvMlVyRE02cWVIbkpJYWV6TVNMCmxlaVV0MHZnVjg3NlJXUW5MSXI2UFVYa0c2TW1KcS9RZ28zenM0NDhHd1UrYWNzMlNoU2dJQytJYkVLREtvVisKMEFYTjMrZTFVRktQWHl1OExJYkpBTG55OVRsWHdzaFpCUGJwSUNELzhsZk1OK3NRNXUzTzFXNVV3a3FhMU9tawpTcUs1ZHpCQS9XSE1lMUFlMFNWa3VFcjJ5MzNuUFd2NGtxNVk3OHJGVHlTTDZ0Y01rc3FSM0ROcis0S2pNeHhlClB3VmZxOWx6L1pmeitmTVg3TGE0QUh5YmJHaGFRbjY1QW9JQkFRQ2haZ01KdkROcDU0cEltL1Bybm1wUXNyWXEKcnhBVEt6RUhhVWFHeUg5MUNzT2NOY282OGtmTENiODh5K1FjSVN1UkZaYzdHbnBUYVMzVFFxempSRmE4bnYwSwpyb3N2S1diVk9mZ2NZMTZaY0EyU0JLcGlkS0dua2tnRTRtUWs5bUlEdFJBSEwxeGYraDBwajhLYnhDNTFTbW85CnZOZUlTRkJhbUVRbzFPZU93THlaOTRNUzR2M2JnQUE2aHl3SkVhZHp3YWU5U2R6ZTNqTlUrNTdOR3RXUWJ4MVIKOXJRVGlEdnE1aGxJc0FQdm5lWXhteFFKYmlXTUUvd3ZzR21xVDBXb05mVFFUeGZFZmUwQTJidzJOYTFBSmNQaQp0aGZVSlMxYm9mOFR4bCtxZ3RXOWQrcy92ZnFQVVlIZ3dQNUwvQTJVZUFLRFlya1BpSlBrOTFZVEprdjAKLS0tLS1FTkQgUlNBIFBSSVZBVEUgS0VZLS0tLS0K
+2020-04-03T02:30:55.0652067Z     token: da325b3f3328852ba164e4347834ce33559e77239217032e756a148d5f1a5ad95c6e68e69b31c2ededac0c27f4f81a1b12508a700f6a9d96fde353e583c5c172[0m
+2020-04-03T02:30:55.0667053Z 
+2020-04-03T02:30:55.3521526Z ##[section]Finishing: terraform apply
+2020-04-03T02:30:55.3587906Z ##[section]Starting: Finalize Job
+2020-04-03T02:30:55.3617816Z Cleaning up task key
+2020-04-03T02:30:55.3619345Z Start cleaning up orphan processes.
+2020-04-03T02:30:55.3905573Z ##[section]Finishing: Finalize Job
+2020-04-03T02:30:55.3947964Z ##[section]Finishing: Deploy_Terraform
