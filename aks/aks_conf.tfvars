@@ -1,0 +1,6 @@
+azure_region = "EastUS"
+kubernetes_version = "1.17.3"
+resource_group = "AKSCluster-RG"
+acr_name = "acraksterraform" 
+keyvault_rg = "AksTerraform-RG"
+keyvault_name = "kvaksterraform"
