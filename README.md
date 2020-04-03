@@ -185,5 +185,5 @@
 
 ### > AKS Secrets
 
-![node-to-node](img\img17.png)
+![node-to-node](img/img17.png)
 
