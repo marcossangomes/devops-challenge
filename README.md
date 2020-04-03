@@ -104,22 +104,22 @@
 ### > Ambiente do Microsoft Azure preparados na Task 2
 
 
-![node-to-node](img\img1.png) 
-![node-to-node](img\img2.png) 
-![node-to-node](img\img3.png) 
+![node-to-node](img/img1.png) 
+![node-to-node](img/img2.png) 
+![node-to-node](img/img3.png) 
 
 
 ### > Projeto criado no AzureDevOps:
 
     https://azure.microsoft.com/pt-br/services/devops/
 
-![node-to-node](img\img4.png)
+![node-to-node](img/img4.png)
 
 ### > Service Connections criadas no Projeto do AzureDevOps
 
     https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml
 
-![node-to-node](img\img5.png)
+![node-to-node](img/img5.png)
 
 ## Task 3 - Deploy do ambiente usando CI/CD no AzureDevOps
 
@@ -127,25 +127,25 @@
 
 ### > Repositório do projeto criado no AzureDevOps
 
-![node-to-node](img\img6.png)
+![node-to-node](img/img6.png)
 
 ### > Arquivos do Terraform
 
-![node-to-node](img\img7.png)
+![node-to-node](img/img7.png)
 
 ### > Arquivos da Aplicação:
 
-![node-to-node](img\img8.png)
+![node-to-node](img/img8.png)
 
 ### > Construção dos Pipelines
 
 - O pipeline de deploy do Cluster AKS foi feito utilizando arquivos declarativos do Terraform e um YAML file do AzurePipelines conforme abaixo:
 
-![node-to-node](img\img9.png)
+![node-to-node](img/img9.png)
 
 - O pipeline de deploy da aplicação foi feito via GUI para exemplificar as duas formas de se construir ambientes pelo AzureDevOps
 
-![node-to-node](img\img10.png)
+![node-to-node](img/img10.png)
 
 ### > Log de execução do pipeline de Terraform
 
@@ -161,29 +161,29 @@
 
     az aks get-credentials --resource-group AKSCluster-RG --name AKSTerraform
 
-![node-to-node](img\img11.png)
+![node-to-node](img/img11.png)
 
 ### > Validando como aplicação foi exposta
 
-![node-to-node](img\img12.png)
+![node-to-node](img/img12.png)
 
 ### > Acessando pelo browser
 
-![node-to-node](img\img13.png)
+![node-to-node](img/img13.png)
 
 # Arquitetura-Final
 
-![node-to-node](img\img14.png)
+![node-to-node](img/img14.png)
 
 ### > AKS Cluster
 
-![node-to-node](img\img15.png)
+![node-to-node](img/img15.png)
 
 ### > AKS Networking
 
-![node-to-node](img\img16.png)
+![node-to-node](img/img16.png)
 
 ### > AKS Secrets
 
-![node-to-node](img\img17.png)
+![node-to-node](img/img17.png)
 
