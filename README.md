@@ -55,11 +55,11 @@
 
 ### > Criar uma "Storage Account" para o cluster do AKS
 
-    az storage account create -n ht-saaksterraform -g ht-AksTerraform-RG -l eastus2
+    az storage account create -n htsaaksterraform -g ht-AksTerraform-RG -l eastus2
 
 ### > Criar um container "tfstate" para o cluster do AKS
 
-    az storage container create -n tfstate --account-name ht-saaksterraform
+    az storage container create -n tfstate --account-name htsaaksterraform
 
 ### > Criar um "KeyVault" para o cluster do AKS
 
@@ -67,7 +67,7 @@
 
 ### > Criar um token SAS para a conta de armazenamento, armazenando no KeyVault
 
-    az storage container generate-sas --account-name ht-saaksterraform --expiry 2021-01-01 --name tfstate --permissions dlrw -o json | xargs az keyvault secret set --vault-name ht-kvaksterraform --name TerraformSASToken --value
+    az storage container generate-sas --account-name htsaaksterraform --expiry 2021-01-01 --name tfstate --permissions dlrw -o json | xargs az keyvault secret set --vault-name ht-kvaksterraform --name TerraformSASToken --value
 
 ### > Criar uma entidade de serviço para AKS e Azure DevOps
 
@@ -93,7 +93,7 @@
 
     terraform init \
     -backend-config="resource_group_name=ht-AksTerraform-RG" \
-    -backend-config="storage_account_name=ht-saaksterraform" \
+    -backend-config="storage_account_name=htsaaksterraform" \
     -backend-config="container_name=tfstate"
 
 
