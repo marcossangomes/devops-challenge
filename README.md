@@ -47,31 +47,31 @@
 
 ### > Definir a região de hospedagem
 
-    eastus2
+    az configure --defaults location=eastus2
 
 ### > Criar um "Resource Group" para os recursos do Cluster AKS
 
-    az group create -n AksTerraform-RG -l eastus2
+    az group create -n ht-AksTerraform-RG -l eastus2
 
 ### > Criar uma "Storage Account" para o cluster do AKS
 
-    az storage account create -n saaksterraform -g AksTerraform-RG -l eastus2
+    az storage account create -n ht-saaksterraform -g ht-AksTerraform-RG -l eastus2
 
 ### > Criar um container "tfstate" para o cluster do AKS
 
-    az storage container create -n tfstate --account-name saaksterraform
+    az storage container create -n tfstate --account-name ht-saaksterraform
 
 ### > Criar um "KeyVault" para o cluster do AKS
 
-    az keyvault create -n kvaksterraform -g AksTerraform-RG -l eastus2
+    az keyvault create -n ht-kvaksterraform -g ht-AksTerraform-RG -l eastus2
 
 ### > Criar um token SAS para a conta de armazenamento, armazenando no KeyVault
 
-    az storage container generate-sas --account-name saaksterraform --expiry 2021-01-01 --name tfstate --permissions dlrw -o json | xargs az keyvault secret set --vault-name kvaksterraform --name TerraformSASToken --value
+    az storage container generate-sas --account-name ht-saaksterraform --expiry 2021-01-01 --name tfstate --permissions dlrw -o json | xargs az keyvault secret set --vault-name ht-kvaksterraform --name TerraformSASToken --value
 
 ### > Criar uma entidade de serviço para AKS e Azure DevOps
 
-    az ad sp create-for-rbac -n "AksTerraformSPN"
+    az ad sp create-for-rbac -n "ht-AksTerraformSPN"
 
 ### > Criar uma chave ssh
 
@@ -79,21 +79,21 @@
 
 ### > Armazenar a chave pública no Azure KeyVault
 
-    az keyvault secret set --vault-name kvaksterraform --name LinuxSSHPubKey -f ~/.ssh/id_rsa_terraform.pub > /dev/null
+    az keyvault secret set --vault-name ht-kvaksterraform --name LinuxSSHPubKey -f ~/.ssh/id_rsa_terraform.pub > /dev/null
 
 ### > Armazenar a entidade de serviço no Azure KeyVault
 
-    az keyvault secret set --vault-name kvaksterraform --name spn-id --value dfafd341-3f43-4b85-8944-21b014dbcfea > /dev/null
+    az keyvault secret set --vault-name ht-kvaksterraform --name spn-id --value dfafd341-3f43-4b85-8944-21b014dbcfea > /dev/null
 
 ### > Armazenar a entidade de serviço no Azure KeyVault
 
-    az keyvault secret set --vault-name kvaksterraform --name spn-secret --value 008e522b-f1c5-45cd-8f9a-c609bbb504c6 > /dev/null
+    az keyvault secret set --vault-name ht-kvaksterraform --name spn-secret --value 008e522b-f1c5-45cd-8f9a-c609bbb504c6 > /dev/null
 
 ### > Infelizmente, o recurso Terraform Backend não suporta variáveis, então precisaremos passar o parâmetro no método init para configurar corretamente o back-end em nosso pipeline de CI/CD
 
     terraform init \
-    -backend-config="resource_group_name= AksTerraform-RG" \
-    -backend-config="storage_account_name=saaksterraform" \
+    -backend-config="resource_group_name=ht-AksTerraform-RG" \
+    -backend-config="storage_account_name=ht-saaksterraform" \
     -backend-config="container_name=tfstate"
 
 
