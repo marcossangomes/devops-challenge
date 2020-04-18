@@ -24,9 +24,9 @@ stages:
         command: init
         workingDirectory: aks
         backendType: azurerm
-        backendServiceArm: 'ht-AksTerraformSPN'
-        backendAzureRmResourceGroupName: 'ht-AKSTerraform-RG'
-        backendAzureRmStorageAccountName: 'htsaaksterraform'
+        backendServiceArm: 'Azure-DevOps'
+        backendAzureRmResourceGroupName: 'mkopicloud-tstate-rg'
+        backendAzureRmStorageAccountName: 'mkopicloudtfstate21365'
         backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'demo.terraform.tfstate'
     - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
@@ -57,9 +57,9 @@ stages:
               command: init
               workingDirectory: $(Pipeline.Workspace)/terraform_out
               backendType: azurerm
-              backendServiceArm: 'ht-AksTerraformSPN'
-              backendAzureRmResourceGroupName: 'ht-AKSTerraform-RG'
-              backendAzureRmStorageAccountName: 'htsaaksterraform'
+              backendServiceArm: 'Azure-DevOps'
+              backendAzureRmResourceGroupName: 'mkopicloud-tstate-rg'
+              backendAzureRmStorageAccountName: 'mkopicloudtfstate21365'
               backendAzureRmContainerName: 'tfstate'
               backendAzureRmKey: 'demo.terraform.tfstate'
           - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
@@ -67,7 +67,7 @@ stages:
             inputs:
               command: plan
               workingDirectory: $(Pipeline.Workspace)/terraform_out
-              environmentServiceName: 'ht-AksTerraformSPN'
+              environmentServiceName: 'Azure-DevOps'
               secureVarsFile: 'aks_conf.tfvars'
               commandOptions: '-out $(Pipeline.Workspace)/terraform_out/terraform_aks_out'
               terraformVersion: 0.12.6
@@ -76,7 +76,7 @@ stages:
             inputs:
               command: apply
               workingDirectory: $(Pipeline.Workspace)/terraform_out
-              environmentServiceName: 'ht-AksTerraformSPN'
+              environmentServiceName: 'Azure-DevOps'
               commandOptions: '$(Pipeline.Workspace)/terraform_out/terraform_aks_out'
               terraformVersion: 0.12.6
             
